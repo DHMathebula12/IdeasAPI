@@ -1,0 +1,11 @@
+<br/>
+<div class="container">
+    <div class="col-md-12">
+        <h2>Accelerator - Day 5</h2>
+        <button type="button" class="btn btn-info" (click)="alert(info, 'lg')">Info (Large size)</button>
+    </div>
+</div>
+
+<ng-template #info let-c="close" >
+    <sol-modal-alert iconClass="ico-info" iconStyle="info" buttonText="Primary button is mandatory" title="Primary info message" [message]="message" (callback)="c('Close clicked')"></sol-modal-alert>
+</ng-template>
