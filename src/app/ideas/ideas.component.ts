@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/interval';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/take';
 
 @Component({
   selector: 'app-ideas',
@@ -22,7 +26,19 @@ export class IdeasComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const myNumbers = Observable.interval(1000)
+      .filter(value => {
+        return value > 2;
+      })
+      .map(value => {
+        return value * 2;
+      });
+
+    myNumbers.subscribe(number => {
+      console.log(number);
+    });
+  }
 
   createIdea() {
     // this.ideas.push(this.title);

@@ -1,4 +1,12 @@
-<p>
-  <button (click)="onButtonClicked()" class="btn btn-primary">{{fromParent}}</button>
-</p>
-
+<div class="page-header">
+  <div class="row ">
+    <div class="col-md-6 page-header-title">
+      <h2 class="align-middle page-header-title">
+        <ng-content></ng-content>
+      </h2>
+    </div>
+    <div class="col-md-6">
+      <img class="float-right bison-right" width="150" height=“196” [src]="'../../assets/images/Bison-accelerator-logo.png'" />
+    </div>
+  </div>
+</div>
