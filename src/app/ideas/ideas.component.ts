@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/interval';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/take';
+import { IdeasService } from '../ideas.service';
 
 @Component({
   selector: 'app-ideas',
@@ -24,20 +25,22 @@ export class IdeasComponent implements OnInit {
     }
   ];
 
-  constructor() {}
+  constructor(private ideasService: IdeasService) {}
 
   ngOnInit() {
-    const myNumbers = Observable.interval(1000)
-      .filter(value => {
-        return value > 2;
-      })
-      .map(value => {
-        return value * 2;
-      });
-
-    myNumbers.subscribe(number => {
-      console.log(number);
+    this.ideasService.getIdeas().subscribe(response => {
+      console.log(response);
     });
+    // const myNumbers = Observable.interval(1000)
+    //   .filter(value => {
+    //     return value > 2;
+    //   })
+    //   .map(value => {
+    //     return value * 2;
+    //   });
+    // myNumbers.subscribe(number => {
+    //   console.log(number);
+    // });
   }
 
   createIdea() {
