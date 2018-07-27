@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <app-header [fromParent]="'Coooool'" (headerEventSent)="getHeader($event)"></app-header>
+
+    <img [src]="'../../assets/images/Bison-accelerator-logo.png'" width="150px" height="194px" />
+
+    <div class="form-group">
+      <label class="form-label">Title</label>
+      <input class="form-control" [(ngModel)]="title" type="text" />
+    </div>
+    {{title}}
+    <br/>
+    <br/>
+
+    <button class="btn btn-primary" (click)="createIdea()">Create Idea</button>
+
+    <p *ngIf="ideaCreated" [ngClass]="ideaCreated === true ? 'success' : ''">{{ideaStatus}}</p>
+  </div>
+</div>
+
+<div *ngFor="let idea of ideas">
+  {{idea}}
+</div>
