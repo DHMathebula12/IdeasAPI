@@ -9,14 +9,23 @@ export class IdeasComponent implements OnInit {
   title = 'Ideas';
   ideaStatus = 'button was not created';
   ideaCreated = false;
-  ideas = ['idea1', 'idea 2', 'idea 3'];
+  ideas = [
+    {
+      header: 'Idea 1',
+      body: 'Idea Body'
+    },
+    {
+      header: 'Idea 2',
+      body: 'Idea Body 2'
+    }
+  ];
 
   constructor() {}
 
   ngOnInit() {}
 
   createIdea() {
-    this.ideas.push(this.title);
+    // this.ideas.push(this.title);
     this.ideaCreated = true;
     this.ideaStatus = 'Idea was created';
   }

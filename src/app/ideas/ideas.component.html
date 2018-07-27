@@ -19,6 +19,6 @@
   </div>
 </div>
 
-<div *ngFor="let idea of ideas">
-  {{idea}}
-</div>
+<app-idea *ngFor="let idea of ideas" [idea]="idea">
+
+</app-idea>
