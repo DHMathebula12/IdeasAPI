@@ -14,22 +14,12 @@ export class IdeasComponent implements OnInit {
   title = 'Ideas';
   ideaStatus = 'button was not created';
   ideaCreated = false;
-  ideas = [
-    {
-      header: 'Idea 1',
-      body: 'Idea Body'
-    },
-    {
-      header: 'Idea 2',
-      body: 'Idea Body 2'
-    }
-  ];
-
+  ideas = [];
   constructor(private ideasService: IdeasService) {}
 
   ngOnInit() {
     this.ideasService.getIdeas().subscribe(response => {
-      console.log(response);
+      this.ideas = response;
     });
     // const myNumbers = Observable.interval(1000)
     //   .filter(value => {
@@ -43,11 +33,7 @@ export class IdeasComponent implements OnInit {
     // });
   }
 
-  createIdea() {
-    // this.ideas.push(this.title);
-    this.ideaCreated = true;
-    this.ideaStatus = 'Idea was created';
-  }
+
 
   getHeader(value) {
     alert(value);

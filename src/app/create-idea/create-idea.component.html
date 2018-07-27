@@ -1,0 +1,16 @@
+<app-header>
+  Create Idea
+</app-header>
+
+<div class="page-body">
+  <div class="form-group">
+    <label class="form-label">Header</label>
+    <input class="form-control" [(ngModel)]="header" type="text" />
+  </div>
+  <div class="form-group">
+    <label class="form-label">Body</label>
+    <textarea class="form-control" [(ngModel)]="body" type="text"></textarea>
+  </div>
+</div>
+
+<button class="btn btn-primary" (click)="createIdea()">Create Idea</button>

@@ -1,4 +1,14 @@
 <br/>
+<sol-header [color]="'#efefef'">
+    <sol-header-masthead [fullLogo]="true">
+        <div class="sol-masthead-left">
+            <ul class="list-unstyled">
+                <li><a [routerLink]="'/ideas'">Ideas</a></li>
+                <li><a [routerLink]="'/create-idea'">Create Idea</a></li>
+            </ul>
+        </div>
+    </sol-header-masthead>
+</sol-header>
 <div class="container">
-        <app-ideas></app-ideas>
+       <router-outlet></router-outlet>
 </div>

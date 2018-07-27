@@ -1,23 +1,17 @@
+<app-header>
+  Idea App
+</app-header>
+
+
 <div class="page-body">
   <!-- <div class="row">
     <div class="col-md-12"> -->
 
-      <app-header [fromParent]="'Coooool'" (headerEventSent)="getHeader($event)">
-        Idea App
-      </app-header>
 
-      <div class="form-group">
-        <label class="form-label">Title</label>
-        <input class="form-control" [(ngModel)]="title" type="text" />
-      </div>
-      {{title}}
-      <br/>
-      <br/>
 
-      <button class="btn btn-primary" (click)="createIdea()">Create Idea</button>
 
-      <p *ngIf="ideaCreated" [ngClass]="ideaCreated === true ? 'success' : ''">{{ideaStatus}}</p>
-    <!-- </div>
+  <p *ngIf="ideaCreated" [ngClass]="ideaCreated === true ? 'success' : ''">{{ideaStatus}}</p>
+  <!-- </div>
   </div> -->
 
   <app-idea *ngFor="let idea of ideas" [idea]="idea">
